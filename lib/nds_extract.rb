@@ -21,9 +21,17 @@ def directors_totals(nds)
   # Be sure to return the result at the end!
   row = 0 
   while row < nds.length do 
-    
-  end
-  nil
+    gross = 0 
+    column = 0 
+    name = nds[row][:name]
+    while column < nds[row][:movies].length do
+      gross += nds[row][:movies][column][:worldwide_gross]
+      column += 1 
+    end 
+    result[name] = gross 
+    row += 1 
+  end 
+  result 
 end
 
 pp directors_database
